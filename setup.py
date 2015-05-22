@@ -24,7 +24,13 @@ config = {
                     'Intended Audience :: Developers',
                     'Programming Language :: Python :: 2.7',
                     'License :: OSI Approved :: MIT License',
-                    'Topic :: Communications :: Email']
+                    'Topic :: Communications :: Email'],
+    'entry_points': {
+        'console_scripts': [
+            'minimail = minimail.minimail:main',
+            'mm = minimail.minimail:main',
+            ],
+        }
 }
 
 

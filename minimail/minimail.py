@@ -5,11 +5,11 @@ import argparse
 import ConfigParser
 from email.mime.text import MIMEText
 import getpass
-from os.path import isfile
+from os.path import isfile, expanduser
 import smtplib
 import sys
 
-
+CONFIG_FILE = "{}/.minimail".format(expanduser('~'))
 DEFAULT_STRING = ("The sun is a miasma / "
                   "Of incandescent plasma / "
                   "The sun's not simply made out of gas / "
@@ -49,11 +49,11 @@ def configure(config_flag):
         does not exist, prompt for one-time initial config.
     '''
 
-    if not isfile("mm.cnf") or config_flag:
+    if not isfile(CONFIG_FILE) or config_flag:
         init_config()
 
     config = ConfigParser.RawConfigParser()
-    config.read("mm.cnf")
+    config.read(CONFIG_FILE)
     return (config.get("SMTP", "email"),
             config.get("SMTP", "host"),
             config.getint("SMTP", "port"))
@@ -71,7 +71,7 @@ def init_config():
     config.set('SMTP', 'email', raw_input("Email address\n>> "))
 
     # Write the configuration
-    with open("mm.cnf", "wb") as config_file:
+    with open(CONFIG_FILE, "wb") as config_file:
         config.write(config_file)
 
     print "\nConfiguration complete!\n"
