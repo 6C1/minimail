@@ -6,7 +6,7 @@ Minimail is a teeny tiny mail sender.
 
 Clone this repo and run
 
-    `sudo python setup.py install`
+    sudo python setup.py install
 
 ## Configuration
 
