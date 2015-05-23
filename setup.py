@@ -15,7 +15,7 @@ config = {
     'author': 'Cooper Stimson',
     'author_email': 'cooper@cooperstimson.com',
     'url': 'github.com/6c1/minimail',
-    'version': '0.1',
+    'version': '0.1.0',
     'packages': ['minimail'],
     'license': 'MIT',
     'long_description': read('README.md'),

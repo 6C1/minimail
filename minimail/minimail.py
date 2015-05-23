@@ -1,6 +1,9 @@
 '''
 A teeny tiny mail sender.
 '''
+
+__version__ == "0.1.0"
+
 import argparse
 import ConfigParser
 from email.mime.text import MIMEText
