@@ -18,7 +18,7 @@ config = {
     'version': '0.1.0',
     'packages': ['minimail'],
     'license': 'MIT',
-    'long_description': read('README.md'),
+    'long_description': read('README'),
     'classifiers': ['Development Status :: 3 - Alpha',
                     'Environment :: Console',
                     'Intended Audience :: Developers',
